@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'your-credentials', url: 'your-repo-url.git']])
+            }
+        }
+        
+        stage('build') {
+            steps {
+                git branch: 'master', credentialsId: 'your-credentials', url: 'your-repo-url.git'
+                sh 'python3 python_file.py'
+            }
+        }
+        
+        stage('test') {
+            steps {
+                echo "Testing is done"
+            }
+        }
+    }
+}
