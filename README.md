@@ -64,36 +64,6 @@ This project is integrated with Jenkins for continuous integration (CI). The Jen
 2. Build: Runs the model training script (python_file.py).
 3. Test: Verifies that the training and model operations were successful.
 
-## Jenkinsfile
-
-Here’s an overview of the Jenkins pipeline defined in the Jenkinsfile:
-
-```groovy
-pipeline {
-    agent any
-
-    stages {
-        stage('checkout') {
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'your-credentials', url: 'https://github.com/your-username/house-price-prediction.git']])
-            }
-        }
-        
-        stage('build') {
-            steps {
-                git branch: 'main', credentialsId: 'your-credentials', url: 'https://github.com/your-username/house-price-prediction.git'
-                sh 'python3 python_file.py'
-            }
-        }
-        
-        stage('test') {
-            steps {
-                echo "Testing is done"
-            }
-        }
-    }
-}
-```
 ## Setting Up Jenkins
 
 1. Install Jenkins on your server.
