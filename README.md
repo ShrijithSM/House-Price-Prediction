@@ -79,7 +79,7 @@ The machine learning model is built using the following steps:
 2. Model Building: A regression model is trained on the dataset.
 3. Evaluation: The model is evaluated using metrics like Mean Squared Error (MSE) and R-squared.
 
-The model is implemented in the main.ipynb notebook.
+The model is implemented in the `main.ipynb` notebook.
 
 ## Contributing
 
