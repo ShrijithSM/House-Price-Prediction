@@ -1,6 +1,4 @@
 # House Price Prediction Model
-
-
 This repository contains a project that predicts house prices based on various features using a machine learning model. The model is implemented in a Jupyter notebook (`main.ipynb`) and `main.py`, and the repository is set up with continuous integration using Jenkins.
 
 ## Table of Contents
